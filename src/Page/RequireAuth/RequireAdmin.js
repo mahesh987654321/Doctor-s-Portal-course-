@@ -9,12 +9,12 @@ const RequireAdmin = ({ children }) => {
   const [user, loading, error] = useAuthState(auth);
   const [admin, setLoading] = UserAdmin(user);
   let location = useLocation();
-  if (loading || setLoading) {
+  if (loading ) {
     return <Spinner></Spinner>;
   }
   if (!user || !admin) {
-    signOut(auth);
-    return <Navigate to="/login" state={{ from: location }} replace />;
+    // signOut(auth);
+    // return <Navigate to="/login" state={{ from: location }} replace />;
   }
   return children;
 };

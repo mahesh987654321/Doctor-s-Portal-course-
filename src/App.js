@@ -2,8 +2,10 @@ import { Route, Routes } from "react-router-dom";
 import About from "./Page/About/About";
 import Appointment from "./Page/Appointment/Appointment";
 import Contact from "./Page/Contact/Contact";
+import AddDoctor from "./Page/Dashboard/AddDoctor";
 import Dashboard from "./Page/Dashboard/Dashboard";
 import History from "./Page/Dashboard/History";
+import ManageDoctors from "./Page/Dashboard/ManageDoctors";
 import MyItems from "./Page/Dashboard/MyItems";
 import Review from "./Page/Dashboard/Review";
 import Users from "./Page/Dashboard/Users";
@@ -35,6 +37,22 @@ function App() {
             element={
               <RequireAdmin>
                 <Users></Users>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="manageDoctors"
+            element={
+              <RequireAdmin>
+                <ManageDoctors></ManageDoctors>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="addDoctor"
+            element={
+              <RequireAdmin>
+                <AddDoctor></AddDoctor>
               </RequireAdmin>
             }
           ></Route>
